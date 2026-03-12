@@ -11,6 +11,7 @@ export default function SiteHeader() {
         <Link href="/">Home</Link>
         <Link href="/jee">JEE</Link>
         <Link href="/neet">NEET</Link>
+        <Link href="/govt">Govt Jobs</Link>
         <Link href="/courses">Courses</Link>
         <Link href="/login">Login</Link>
         <Link href="/#inquiry" className="cta">

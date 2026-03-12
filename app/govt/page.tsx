@@ -3,17 +3,17 @@ import InquiryForm from "../../components/InquiryForm";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 
-export default function NeetPage() {
+export default function GovtJobsPage() {
   return (
     <main className="page">
       <SiteHeader />
       <section className="page-hero">
         <div>
-          <p className="badge">NEET Focused Track</p>
-          <h1>NEET preparation with clarity, consistency, and MCQ mastery.</h1>
+          <p className="badge">Government Exams</p>
+          <h1>Government job preparation with a clear daily plan.</h1>
           <p className="hero-subtitle">
-            Biology-first learning loop with daily practice, revision cycles,
-            and exam-aligned mock tests.
+            Quant, reasoning, and GK preparation with topic-wise targets,
+            weekly tests, and interview readiness.
           </p>
           <div className="hero-actions">
             <a className="primary" href="#inquiry">Book counseling</a>
@@ -21,20 +21,20 @@ export default function NeetPage() {
           </div>
         </div>
         <div className="hero-visual">
-          <h3>NEET practice system</h3>
+          <h3>Exam focus</h3>
           <ul>
-            <li>Daily MCQ drills with accuracy tracking</li>
-            <li>NCERT-first Biology deep dives</li>
-            <li>Fortnightly full syllabus mocks</li>
+            <li>SSC CGL · CHSL · MTS</li>
+            <li>Bank PO · Clerk · RRB</li>
+            <li>Railways · State exams</li>
           </ul>
           <div className="metric-row">
             <div>
-              <span>Avg score rise</span>
-              <strong>+92</strong>
+              <span>Weekly mocks</span>
+              <strong>3x</strong>
             </div>
             <div>
-              <span>Revision cycles</span>
-              <strong>6x</strong>
+              <span>Mentor ratio</span>
+              <strong>1:20</strong>
             </div>
           </div>
         </div>
@@ -42,24 +42,24 @@ export default function NeetPage() {
 
       <section className="section">
         <div className="section-head">
-          <h2>NEET success blueprint</h2>
-          <p>Structured phases that keep Biology and Chemistry on track.</p>
+          <h2>Preparation blueprint</h2>
+          <p>Structured phases that keep every subject on track.</p>
         </div>
         <div className="phase-grid">
           <article className="phase-card">
             <span className="pill">Phase 1</span>
-            <h3>Concept clarity</h3>
-            <p>NCERT-aligned teaching and foundational MCQ practice.</p>
+            <h3>Foundation</h3>
+            <p>Core concepts in quant, reasoning, and GK with daily drills.</p>
           </article>
           <article className="phase-card">
             <span className="pill">Phase 2</span>
             <h3>Speed building</h3>
-            <p>Topic-wise test cycles with daily accuracy tracking.</p>
+            <p>Sectional tests, timing strategy, and error analysis.</p>
           </article>
           <article className="phase-card">
             <span className="pill">Phase 3</span>
-            <h3>Score surge</h3>
-            <p>Full-syllabus mocks, error clinics, and revision sprints.</p>
+            <h3>Selection push</h3>
+            <p>Full mocks, interview prep, and revision sprints.</p>
           </article>
         </div>
       </section>
@@ -67,31 +67,31 @@ export default function NeetPage() {
       <section className="section">
         <div className="section-head">
           <h2>Batch options</h2>
-          <p>Pick a timeline that matches your NEET goal.</p>
+          <p>Flexible batches for working students and full-time aspirants.</p>
         </div>
         <div className="batch-grid">
           <article className="batch-card">
-            <h3>2-Year Core</h3>
-            <p>Class 11-12 NEET syllabus with daily biology practice.</p>
+            <h3>Comprehensive 10-Month</h3>
+            <p>Complete syllabus with weekly mocks and personal mentoring.</p>
             <div className="badge-row">
-              <span className="pill">PCB focus</span>
-              <span className="pill ghost">24 months</span>
+              <span className="pill">Full syllabus</span>
+              <span className="pill ghost">10 months</span>
             </div>
           </article>
           <article className="batch-card">
-            <h3>1-Year Intensive</h3>
-            <p>For droppers aiming to improve scores quickly.</p>
+            <h3>Fast-track 6-Month</h3>
+            <p>Revision + practice cycle for upcoming exam dates.</p>
             <div className="badge-row">
-              <span className="pill">Rapid revision</span>
-              <span className="pill ghost">12 months</span>
+              <span className="pill">Fast-track</span>
+              <span className="pill ghost">6 months</span>
             </div>
           </article>
           <article className="batch-card">
-            <h3>Revision Sprint</h3>
-            <p>90-day final stretch with mock tests and error clinics.</p>
+            <h3>Test Series</h3>
+            <p>Full mocks, sectional tests, and analytics dashboard.</p>
             <div className="badge-row">
-              <span className="pill">90-day sprint</span>
-              <span className="pill ghost">Test-only</span>
+              <span className="pill">Test-only</span>
+              <span className="pill ghost">Rolling</span>
             </div>
           </article>
         </div>
@@ -99,37 +99,36 @@ export default function NeetPage() {
 
       <section className="section split">
         <div>
-          <h2>Subject mastery plan</h2>
+          <h2>Subject focus</h2>
           <p className="hero-subtitle">
-            Weekly diagnostics for Biology, Chemistry, and Physics with
-            precision feedback.
+            Weekly targets across quant, reasoning, English, and GK.
           </p>
           <div className="timeline">
             <div>
-              <strong>Biology</strong>
-              <span>NCERT-aligned teaching + daily MCQ sets.</span>
+              <strong>Quantitative Aptitude</strong>
+              <span>Arithmetic, algebra, and DI drills.</span>
             </div>
             <div>
-              <strong>Chemistry</strong>
-              <span>High-yield chapters with reaction flow mastery.</span>
+              <strong>Reasoning</strong>
+              <span>Puzzles, series, and logic practice.</span>
             </div>
             <div>
-              <strong>Physics</strong>
-              <span>Formula drills, numericals, and exam simulations.</span>
+              <strong>GK + English</strong>
+              <span>Daily current affairs + grammar mastery.</span>
             </div>
           </div>
         </div>
         <div className="cta-band">
-          <h3>Next NEET mock test</h3>
-          <p>Saturday 8:30 AM · Online + Classroom · Free for new students.</p>
+          <h3>Next mock test</h3>
+          <p>Saturday 7:00 PM · Online + Classroom · Free for new students.</p>
           <a className="ghost" href="#inquiry">Reserve a seat</a>
         </div>
       </section>
 
       <section className="section highlight" id="inquiry">
         <div className="section-head">
-          <h2>Start your NEET roadmap</h2>
-          <p>Share your targets and get a mentor-designed weekly plan.</p>
+          <h2>Start your government exam roadmap</h2>
+          <p>Share your target exam and we will map your plan.</p>
         </div>
         <InquiryForm />
       </section>
@@ -137,7 +136,7 @@ export default function NeetPage() {
       <section className="section" id="auth">
         <div className="section-head">
           <h2>Student portal</h2>
-          <p>Track NEET progress, tests, and reports in one place.</p>
+          <p>Track tests, reports, and study plans in one place.</p>
         </div>
         <AuthPanel />
       </section>

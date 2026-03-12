@@ -10,10 +10,10 @@ export default function JeePage() {
       <section className="page-hero">
         <div>
           <p className="badge">JEE Main + Advanced</p>
-          <h1>Precision coaching for engineering aspirants.</h1>
+          <h1>Rank-focused JEE preparation with measurable checkpoints.</h1>
           <p className="hero-subtitle">
-            Two-year and one-year tracks with deep concept drills, weekly
-            analytics, and rank-focused mentorship.
+            Weekly test cycles, advanced problem clinics, and a mentor roadmap
+            that keeps every chapter on schedule.
           </p>
           <div className="hero-actions">
             <a className="primary" href="#inquiry">Book counseling</a>
@@ -42,30 +42,54 @@ export default function JeePage() {
 
       <section className="section">
         <div className="section-head">
-          <h2>Batch structure</h2>
-          <p>Choose the pacing that suits your class year and target rank.</p>
+          <h2>JEE success blueprint</h2>
+          <p>A structured phase plan with clear targets and checkpoints.</p>
         </div>
-        <div className="program-grid">
-          <article className="program-card">
+        <div className="phase-grid">
+          <article className="phase-card">
+            <span className="pill">Phase 1</span>
+            <h3>Concept depth</h3>
+            <p>PCM fundamentals, DPP discipline, and weekly diagnostics.</p>
+          </article>
+          <article className="phase-card">
+            <span className="pill">Phase 2</span>
+            <h3>Problem mastery</h3>
+            <p>Advanced sheets, mixed-chapter drills, time-bound practice.</p>
+          </article>
+          <article className="phase-card">
+            <span className="pill">Phase 3</span>
+            <h3>Rank launch</h3>
+            <p>Full-length mocks, error clinics, and personal strategy.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Batch options</h2>
+          <p>Choose a timeline that matches your class year.</p>
+        </div>
+        <div className="batch-grid">
+          <article className="batch-card">
             <h3>2-Year Foundation</h3>
-            <p>Class 11-12 roadmap with weekly tests and monthly mock exams.</p>
-            <div className="program-meta">
+            <p>Class 11-12 roadmap with weekly tests and monthly mocks.</p>
+            <div className="badge-row">
               <span className="pill">PCM core</span>
               <span className="pill ghost">24 months</span>
             </div>
           </article>
-          <article className="program-card">
+          <article className="batch-card">
             <h3>1-Year Accelerator</h3>
-            <p>For droppers or class 12 students targeting high percentiles.</p>
-            <div className="program-meta">
+            <p>For droppers and class 12 students targeting high ranks.</p>
+            <div className="badge-row">
               <span className="pill">Fast-track</span>
               <span className="pill ghost">12 months</span>
             </div>
           </article>
-          <article className="program-card">
+          <article className="batch-card">
             <h3>Crash Revision</h3>
-            <p>Last 90 days intensive tests, analytics, and chapter sprints.</p>
-            <div className="program-meta">
+            <p>90-day intensive tests, analytics, and revision sprints.</p>
+            <div className="badge-row">
               <span className="pill">90-day sprint</span>
               <span className="pill ghost">Test-only</span>
             </div>

@@ -28,7 +28,15 @@ export default function CoursesPage() {
       <section className="section">
         <div className="section-head">
           <h2>Courses</h2>
-          <p>These are live from Supabase.</p>
+          <p>Filter by goal or duration, then explore the live list.</p>
+        </div>
+        <div className="filter-row">
+          <button className="chip">All</button>
+          <button className="chip ghost">JEE</button>
+          <button className="chip ghost">NEET</button>
+          <button className="chip ghost">Govt Jobs</button>
+          <button className="chip ghost">Foundation</button>
+          <button className="chip ghost">Crash</button>
         </div>
         <CourseList />
       </section>
