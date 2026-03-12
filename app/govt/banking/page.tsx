@@ -1,6 +1,9 @@
 import InquiryForm from "../../../components/InquiryForm";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
+import TrackCoursesList from "../../../components/TrackCoursesList";
+import TopPerformersList from "../../../components/TopPerformersList";
+import TeachersList from "../../../components/TeachersList";
 
 export default function BankingPage() {
   return (
@@ -88,6 +91,30 @@ export default function BankingPage() {
           <p>Saturday 6:00 PM · Online + Classroom · Free for new students.</p>
           <a className="ghost" href="#inquiry">Reserve a seat</a>
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Banking courses</h2>
+          <p>PO, Clerk, and RRB batches with speed drills.</p>
+        </div>
+        <TrackCoursesList track="govt-banking" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Top performers</h2>
+          <p>Recent banking results from our focused batches.</p>
+        </div>
+        <TopPerformersList track="govt-banking" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Banking faculty</h2>
+          <p>Experts for DI, reasoning, English, and GA.</p>
+        </div>
+        <TeachersList track="govt-banking" />
       </section>
 
       <section className="section highlight" id="inquiry">

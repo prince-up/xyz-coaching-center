@@ -1,6 +1,9 @@
 import InquiryForm from "../../../components/InquiryForm";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
+import TrackCoursesList from "../../../components/TrackCoursesList";
+import TopPerformersList from "../../../components/TopPerformersList";
+import TeachersList from "../../../components/TeachersList";
 
 export default function SscPage() {
   return (
@@ -99,6 +102,30 @@ export default function SscPage() {
           <p>Sunday 10:00 AM · Online + Classroom · Free for new students.</p>
           <a className="ghost" href="#inquiry">Reserve a seat</a>
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>SSC courses</h2>
+          <p>Tier-focused batches for CGL, CHSL, MTS, and CPO.</p>
+        </div>
+        <TrackCoursesList track="govt-ssc" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Top performers</h2>
+          <p>Recent SSC results from our mentor-led batches.</p>
+        </div>
+        <TopPerformersList track="govt-ssc" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>SSC faculty</h2>
+          <p>Experts for quant, reasoning, English, and GA.</p>
+        </div>
+        <TeachersList track="govt-ssc" />
       </section>
 
       <section className="section highlight" id="inquiry">

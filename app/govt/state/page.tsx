@@ -1,6 +1,9 @@
 import InquiryForm from "../../../components/InquiryForm";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
+import TrackCoursesList from "../../../components/TrackCoursesList";
+import TopPerformersList from "../../../components/TopPerformersList";
+import TeachersList from "../../../components/TeachersList";
 
 export default function StateExamsPage() {
   return (
@@ -81,6 +84,30 @@ export default function StateExamsPage() {
           <p>Saturday 9:00 AM · Online + Classroom · Free for new students.</p>
           <a className="ghost" href="#inquiry">Reserve a seat</a>
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>State exam courses</h2>
+          <p>PCS and state service batches with regional focus.</p>
+        </div>
+        <TrackCoursesList track="govt-state" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Top performers</h2>
+          <p>Recent state exam results from our mentor-led batches.</p>
+        </div>
+        <TopPerformersList track="govt-state" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>State exam faculty</h2>
+          <p>Experts for state GK, CSAT, and language prep.</p>
+        </div>
+        <TeachersList track="govt-state" />
       </section>
 
       <section className="section highlight" id="inquiry">

@@ -1,6 +1,9 @@
 import InquiryForm from "../../../components/InquiryForm";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
+import TrackCoursesList from "../../../components/TrackCoursesList";
+import TopPerformersList from "../../../components/TopPerformersList";
+import TeachersList from "../../../components/TeachersList";
 
 export default function RailwaysPage() {
   return (
@@ -89,6 +92,30 @@ export default function RailwaysPage() {
           <p>Sunday 8:00 AM · Online + Classroom · Free for new students.</p>
           <a className="ghost" href="#inquiry">Reserve a seat</a>
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Railways courses</h2>
+          <p>NTPC, Group D, ALP, and JE prep batches.</p>
+        </div>
+        <TrackCoursesList track="govt-railways" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Top performers</h2>
+          <p>Recent railways results from our mentor-led batches.</p>
+        </div>
+        <TopPerformersList track="govt-railways" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Railways faculty</h2>
+          <p>Experts for arithmetic, reasoning, science, and GK.</p>
+        </div>
+        <TeachersList track="govt-railways" />
       </section>
 
       <section className="section highlight" id="inquiry">

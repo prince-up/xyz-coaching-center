@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "L1 Coaching Center",
-  description: "Structured coaching for JEE and Mains with measurable progress."
+  description: "Structured coaching for JEE Main + Advanced and NEET with measurable progress."
 };
 
 export default function RootLayout({
@@ -28,7 +28,9 @@ export default function RootLayout({
     <html lang="en" className={`${dmSerif.variable} ${spaceGrotesk.variable}`}>
       <body>
         <div className="page-bg" aria-hidden="true" />
-        {children}
+        <div id="main-content">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -1,7 +1,9 @@
-import AuthPanel from "../../components/AuthPanel";
 import InquiryForm from "../../components/InquiryForm";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import TrackCoursesList from "../../components/TrackCoursesList";
+import TopPerformersList from "../../components/TopPerformersList";
+import TeachersList from "../../components/TeachersList";
 
 export default function NeetPage() {
   return (
@@ -126,20 +128,36 @@ export default function NeetPage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="section-head">
+          <h2>NEET courses</h2>
+          <p>Biology-first learning plans with weekly tests.</p>
+        </div>
+        <TrackCoursesList track="neet" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Top performers</h2>
+          <p>Recent NEET results from our mentor-led batches.</p>
+        </div>
+        <TopPerformersList track="neet" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Faculty for NEET</h2>
+          <p>Subject experts for Physics, Chemistry, and Biology.</p>
+        </div>
+        <TeachersList track="neet" />
+      </section>
+
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your NEET roadmap</h2>
           <p>Share your targets and get a mentor-designed weekly plan.</p>
         </div>
         <InquiryForm />
-      </section>
-
-      <section className="section" id="auth">
-        <div className="section-head">
-          <h2>Student portal</h2>
-          <p>Track NEET progress, tests, and reports in one place.</p>
-        </div>
-        <AuthPanel />
       </section>
 
       <SiteFooter />

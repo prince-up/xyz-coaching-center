@@ -1,7 +1,9 @@
-import AuthPanel from "../../components/AuthPanel";
 import InquiryForm from "../../components/InquiryForm";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import TrackCoursesList from "../../components/TrackCoursesList";
+import TopPerformersList from "../../components/TopPerformersList";
+import TeachersList from "../../components/TeachersList";
 
 export default function JeePage() {
   return (
@@ -125,6 +127,30 @@ export default function JeePage() {
           <p>Sunday 9:00 AM · Online + Classroom · Free for new students.</p>
           <a className="ghost" href="#inquiry">Reserve a seat</a>
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>JEE courses</h2>
+          <p>Focused courses that match the JEE roadmap.</p>
+        </div>
+        <TrackCoursesList track="jee" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Top performers</h2>
+          <p>Recent JEE results from our mentor-led batches.</p>
+        </div>
+        <TopPerformersList track="jee" />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Faculty for JEE</h2>
+          <p>Subject experts guiding Physics, Chemistry, and Mathematics.</p>
+        </div>
+        <TeachersList track="jee" />
       </section>
 
       <section className="section highlight" id="inquiry">
