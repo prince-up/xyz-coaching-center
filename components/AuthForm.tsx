@@ -55,8 +55,8 @@ export default function AuthForm({ mode }: Props) {
   const title = mode === "signup" ? "Create your account" : "Welcome back";
   const subtitle =
     mode === "signup"
-      ? "Start tracking your coaching plan and tests."
-      : "Sign in to see your schedule and reports.";
+      ? "Unlock your personalized plan, tests, and reports."
+      : "Log in to your progress, tests, and roadmap.";
 
   return (
     <div className="auth-page">
@@ -120,8 +120,8 @@ export default function AuthForm({ mode }: Props) {
       <div className="auth-side">
         <h2>Student portal</h2>
         <p>
-          Access your weekly targets, mock tests, and performance analytics in
-          one place.
+          Access weekly targets, mock tests, and performance analytics in one
+          place.
         </p>
         <ul>
           <li>Weekly test analysis</li>

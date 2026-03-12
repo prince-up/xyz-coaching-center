@@ -10,7 +10,7 @@ export default function GovtJobsPage() {
       <section className="page-hero">
         <div>
           <p className="badge">Government Exams</p>
-          <h1>Government job preparation with a clear daily plan.</h1>
+          <h1>Government exam prep with daily targets and weekly proof.</h1>
           <p className="hero-subtitle">
             Quant, reasoning, and GK preparation with topic-wise targets,
             weekly tests, and interview readiness.
@@ -61,6 +61,51 @@ export default function GovtJobsPage() {
             <h3>Selection push</h3>
             <p>Full mocks, interview prep, and revision sprints.</p>
           </article>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Choose your exam stream</h2>
+          <p>Pick a track to open a dedicated dashboard.</p>
+        </div>
+        <div className="stream-grid">
+          <a className="stream-card" href="/govt/ssc">
+            <div className="stream-header">
+              <span className="pill">SSC</span>
+              <span className="pill ghost">CGL · CHSL · MTS</span>
+            </div>
+            <h3>SSC Exams</h3>
+            <p>Tier-wise plan, quant + reasoning drills, and mock analysis.</p>
+            <span className="link">Open SSC dashboard</span>
+          </a>
+          <a className="stream-card" href="/govt/banking">
+            <div className="stream-header">
+              <span className="pill">Banking</span>
+              <span className="pill ghost">PO · Clerk · RRB</span>
+            </div>
+            <h3>Banking Exams</h3>
+            <p>Speed drills, sectional tests, and interview readiness.</p>
+            <span className="link">Open Banking dashboard</span>
+          </a>
+          <a className="stream-card" href="/govt/railways">
+            <div className="stream-header">
+              <span className="pill">Railways</span>
+              <span className="pill ghost">NTPC · Group D</span>
+            </div>
+            <h3>Railway Exams</h3>
+            <p>Shift-based strategy, mock cycles, and GK focus.</p>
+            <span className="link">Open Railways dashboard</span>
+          </a>
+          <a className="stream-card" href="/govt/state">
+            <div className="stream-header">
+              <span className="pill">State</span>
+              <span className="pill ghost">UP · Bihar · MP</span>
+            </div>
+            <h3>State Exams</h3>
+            <p>State-specific GK, policy updates, and regional prep.</p>
+            <span className="link">Open State dashboard</span>
+          </a>
         </div>
       </section>
 

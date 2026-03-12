@@ -10,7 +10,7 @@ export default function NeetPage() {
       <section className="page-hero">
         <div>
           <p className="badge">NEET Focused Track</p>
-          <h1>NEET preparation with clarity, consistency, and MCQ mastery.</h1>
+          <h1>NEET preparation with precision, pace, and MCQ control.</h1>
           <p className="hero-subtitle">
             Biology-first learning loop with daily practice, revision cycles,
             and exam-aligned mock tests.

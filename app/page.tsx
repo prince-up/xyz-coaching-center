@@ -11,19 +11,19 @@ export default function Home() {
       <SiteHeader />
       <header className="hero">
         <div className="hero-content">
-          <p className="badge">L1 Coaching Center · Dashboard</p>
-          <h1>Study plans that behave like a system, not a guess.</h1>
+          <p className="badge">L1 Coaching Center · Mission Control</p>
+          <h1>Prep built like a system: visible, measured, unstoppable.</h1>
           <p className="hero-subtitle">
-            We turn targets into weekly sprints, measure them, and fix the
-            gaps. Every batch runs on a visible plan you can track.
+            Weekly sprint planning, precision diagnostics, and mentor
+            interventions that keep every student on track.
           </p>
           <div className="hero-actions">
-            <a className="primary" href="#inquiry">Book counseling</a>
-            <a className="ghost" href="/courses">See live courses</a>
+            <a className="primary" href="#inquiry">Book a strategy call</a>
+            <a className="ghost" href="/courses">View live courses</a>
           </div>
           <div className="stat-strip">
             <div className="stat-card">
-              <span>Active batches</span>
+              <span>Live batches</span>
               <strong>14</strong>
             </div>
             <div className="stat-card">
@@ -31,8 +31,12 @@ export default function Home() {
               <strong>92%</strong>
             </div>
             <div className="stat-card">
-              <span>Avg rank gain</span>
+              <span>Avg rank lift</span>
               <strong>+27%</strong>
+            </div>
+            <div className="stat-card">
+              <span>Students trained</span>
+              <strong>3,50,000+</strong>
             </div>
           </div>
         </div>
@@ -53,7 +57,7 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <h2>Weekly command center</h2>
-          <p>Everything a student and parent needs to track the plan.</p>
+          <p>Everything you need to track targets, tests, and outcomes.</p>
         </div>
         <div className="dashboard-grid">
           <div className="info-card">
@@ -96,7 +100,7 @@ export default function Home() {
               </div>
             </div>
             <p className="muted-text">
-              Weekly mentor review locks the next set of topics.
+              Mentor review locks the next set of topics every week.
             </p>
           </div>
         </div>
@@ -105,7 +109,7 @@ export default function Home() {
       <section className="section">
         <div className="section-head">
           <h2>Programs built for outcomes</h2>
-          <p>Choose the right track, then stay inside the system.</p>
+          <p>Choose a track and follow a clear, measurable plan.</p>
         </div>
         <div className="program-grid">
           <article className="program-card">
@@ -115,8 +119,8 @@ export default function Home() {
             </div>
             <h3>JEE Main + Advanced</h3>
             <p>
-              Rank-focused PCM curriculum with weekly mocks and advanced
-              problem clinics.
+              Concept depth, weekly mocks, and advanced problem clinics for
+              rank growth.
             </p>
             <div className="program-footer">
               <span>Starts April 2026</span>
@@ -146,13 +150,58 @@ export default function Home() {
             <h3>Government Exam Track</h3>
             <p>
               Quant, reasoning, and GK plans with daily tests, sectional
-              targets, and interview prep support.
+              targets, and interview prep.
             </p>
             <div className="program-footer">
               <span>Rolling batches</span>
               <a className="link" href="/govt">View details</a>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Choose your govt exam stream</h2>
+          <p>Pick a stream to open a dedicated dashboard.</p>
+        </div>
+        <div className="stream-grid">
+          <a className="stream-card" href="/govt/ssc">
+            <div className="stream-header">
+              <span className="pill">SSC</span>
+              <span className="pill ghost">CGL · CHSL · MTS</span>
+            </div>
+            <h3>SSC Exams</h3>
+            <p>Tier-wise plan, quant + reasoning drills, and mock analysis.</p>
+            <span className="link">Open SSC dashboard</span>
+          </a>
+          <a className="stream-card" href="/govt/banking">
+            <div className="stream-header">
+              <span className="pill">Banking</span>
+              <span className="pill ghost">PO · Clerk · RRB</span>
+            </div>
+            <h3>Banking Exams</h3>
+            <p>Speed drills, sectional tests, and interview readiness.</p>
+            <span className="link">Open Banking dashboard</span>
+          </a>
+          <a className="stream-card" href="/govt/railways">
+            <div className="stream-header">
+              <span className="pill">Railways</span>
+              <span className="pill ghost">NTPC · Group D</span>
+            </div>
+            <h3>Railway Exams</h3>
+            <p>Shift-based strategy, mock cycles, and GK focus.</p>
+            <span className="link">Open Railways dashboard</span>
+          </a>
+          <a className="stream-card" href="/govt/state">
+            <div className="stream-header">
+              <span className="pill">State</span>
+              <span className="pill ghost">UP · Bihar · MP</span>
+            </div>
+            <h3>State Exams</h3>
+            <p>State-specific GK, policy updates, and regional prep.</p>
+            <span className="link">Open State dashboard</span>
+          </a>
         </div>
       </section>
 
@@ -207,7 +256,7 @@ export default function Home() {
         <CourseList />
       </section>
 
-      <section className="section highlight" id="inquiry">
+      <section className="section inquiry-panel" id="inquiry">
         <div className="section-head">
           <h2>Talk to a mentor</h2>
           <p>
@@ -217,26 +266,7 @@ export default function Home() {
         </div>
         <InquiryForm />
       </section>
-
-      <section className="section" id="auth">
-        <div className="section-head">
-          <h2>Student portal</h2>
-          <p>Sign in to manage your inquiry, schedule, and course access.</p>
-        </div>
-        <AuthPanel />
-      </section>
-
-      <section className="section" id="admin">
-        <div className="section-head">
-          <h2>Admin control</h2>
-          <p>
-            Only the admin email defined in environment variables can manage
-            courses and inquiries.
-          </p>
-        </div>
-        <AdminPanel />
-      </section>
-      <SiteFooter />
-    </main>
-  );
-}
++      <SiteFooter />
+     </main>
+   );
+ }

@@ -9,9 +9,9 @@ export default function CoursesPage() {
       <section className="page-hero">
         <div>
           <p className="badge">All Courses</p>
-          <h1>Live course catalog from Supabase.</h1>
+          <h1>Live catalog with real-time batch updates.</h1>
           <p className="hero-subtitle">
-            Add new courses from the admin panel and they will appear here
+            Add new courses from the admin panel and they appear here
             instantly.
           </p>
         </div>

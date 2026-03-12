@@ -10,14 +10,15 @@ export default function JeePage() {
       <section className="page-hero">
         <div>
           <p className="badge">JEE Main + Advanced</p>
-          <h1>Rank-focused JEE preparation with measurable checkpoints.</h1>
+          <h1>JEE prep powered by the same system that runs every track.</h1>
           <p className="hero-subtitle">
-            Weekly test cycles, advanced problem clinics, and a mentor roadmap
-            that keeps every chapter on schedule.
+            L1 runs JEE, NEET, and Govt prep under one outcome-driven system.
+            For JEE, that means advanced problem clinics and weekly rank
+            diagnostics.
           </p>
           <div className="hero-actions">
             <a className="primary" href="#inquiry">Book counseling</a>
-            <a className="ghost" href="/courses">View courses</a>
+            <a className="ghost" href="/courses">View all programs</a>
           </div>
         </div>
         <div className="hero-visual">
@@ -25,7 +26,7 @@ export default function JeePage() {
           <ul>
             <li>Concept sprint + DPP daily</li>
             <li>Weekend full-length tests</li>
-            <li>Advance-level problem clinics</li>
+            <li>Advanced problem clinics</li>
           </ul>
           <div className="metric-row">
             <div>
@@ -43,7 +44,7 @@ export default function JeePage() {
       <section className="section">
         <div className="section-head">
           <h2>JEE success blueprint</h2>
-          <p>A structured phase plan with clear targets and checkpoints.</p>
+          <p>Phase-led plan with checkpoints and weekly analytics.</p>
         </div>
         <div className="phase-grid">
           <article className="phase-card">
@@ -132,14 +133,6 @@ export default function JeePage() {
           <p>Share your targets and get a mentor-designed weekly plan.</p>
         </div>
         <InquiryForm />
-      </section>
-
-      <section className="section" id="auth">
-        <div className="section-head">
-          <h2>Student portal</h2>
-          <p>Track JEE progress, tests, and reports in one place.</p>
-        </div>
-        <AuthPanel />
       </section>
 
       <SiteFooter />
