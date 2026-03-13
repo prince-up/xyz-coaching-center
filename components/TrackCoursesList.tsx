@@ -29,7 +29,7 @@ export default function TrackCoursesList({ track, limit = 6 }: Props) {
 
     const fetchCourses = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("track_courses")
         .select("id, title, description, duration, level")
         .eq("track", track)

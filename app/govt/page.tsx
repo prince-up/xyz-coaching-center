@@ -1,10 +1,8 @@
-import AuthPanel from "../../components/AuthPanel";
 import InquiryForm from "../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import TrackCoursesList from "../../components/TrackCoursesList";
-import TopPerformersList from "../../components/TopPerformersList";
-import TeachersList from "../../components/TeachersList";
 
 export default function GovtJobsPage() {
   return (
@@ -13,10 +11,10 @@ export default function GovtJobsPage() {
       <section className="page-hero">
         <div>
           <p className="badge">Government Exams</p>
-          <h1>Government exam prep with daily targets and weekly proof.</h1>
+          <h1>Government exam prep with clear targets and weekly proof.</h1>
           <p className="hero-subtitle">
-            Quant, reasoning, and GK preparation with topic-wise targets,
-            weekly tests, and interview readiness.
+            Focused preparation for SSC, Banking, Railways, and State exams
+            with measurable progress every week.
           </p>
           <div className="hero-actions">
             <a className="primary" href="#inquiry">Book counseling</a>
@@ -24,6 +22,15 @@ export default function GovtJobsPage() {
           </div>
         </div>
         <div className="hero-visual">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+              alt="Students preparing for government exams"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>Exam focus</h3>
           <ul>
             <li>SSC CGL · CHSL · MTS</li>
@@ -45,8 +52,8 @@ export default function GovtJobsPage() {
 
       <section className="section">
         <div className="section-head">
-          <h2>Preparation blueprint</h2>
-          <p>Structured phases that keep every subject on track.</p>
+          <h2>3-phase preparation blueprint</h2>
+          <p>Simple structure that keeps your full syllabus in control.</p>
         </div>
         <div className="phase-grid">
           <article className="phase-card">
@@ -70,7 +77,7 @@ export default function GovtJobsPage() {
       <section className="section">
         <div className="section-head">
           <h2>Choose your exam stream</h2>
-          <p>Pick a track to open a dedicated dashboard.</p>
+          <p>Pick your target and move to the dedicated preparation page.</p>
         </div>
         <div className="stream-grid">
           <a className="stream-card" href="/govt/ssc">
@@ -114,103 +121,18 @@ export default function GovtJobsPage() {
 
       <section className="section">
         <div className="section-head">
-          <h2>Batch options</h2>
-          <p>Flexible batches for working students and full-time aspirants.</p>
-        </div>
-        <div className="batch-grid">
-          <article className="batch-card">
-            <h3>Comprehensive 10-Month</h3>
-            <p>Complete syllabus with weekly mocks and personal mentoring.</p>
-            <div className="badge-row">
-              <span className="pill">Full syllabus</span>
-              <span className="pill ghost">10 months</span>
-            </div>
-          </article>
-          <article className="batch-card">
-            <h3>Fast-track 6-Month</h3>
-            <p>Revision + practice cycle for upcoming exam dates.</p>
-            <div className="badge-row">
-              <span className="pill">Fast-track</span>
-              <span className="pill ghost">6 months</span>
-            </div>
-          </article>
-          <article className="batch-card">
-            <h3>Test Series</h3>
-            <p>Full mocks, sectional tests, and analytics dashboard.</p>
-            <div className="badge-row">
-              <span className="pill">Test-only</span>
-              <span className="pill ghost">Rolling</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section className="section split">
-        <div>
-          <h2>Subject focus</h2>
-          <p className="hero-subtitle">
-            Weekly targets across quant, reasoning, English, and GK.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Quantitative Aptitude</strong>
-              <span>Arithmetic, algebra, and DI drills.</span>
-            </div>
-            <div>
-              <strong>Reasoning</strong>
-              <span>Puzzles, series, and logic practice.</span>
-            </div>
-            <div>
-              <strong>GK + English</strong>
-              <span>Daily current affairs + grammar mastery.</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next mock test</h3>
-          <p>Saturday 7:00 PM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-head">
           <h2>Govt exam courses</h2>
           <p>Curated courses for SSC, Banking, Railways, and State exams.</p>
         </div>
         <TrackCoursesList track="govt" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent govt exam results from our focused batches.</p>
-        </div>
-        <TopPerformersList track="govt" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>Govt exam faculty</h2>
-          <p>Experts for aptitude, reasoning, English, and GK.</p>
-        </div>
-        <TeachersList track="govt" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your government exam roadmap</h2>
-          <p>Share your target exam and we will map your plan.</p>
+          <p>Share your target exam and get a personalized weekly plan.</p>
         </div>
         <InquiryForm />
-      </section>
-
-      <section className="section" id="auth">
-        <div className="section-head">
-          <h2>Student portal</h2>
-          <p>Track tests, reports, and study plans in one place.</p>
-        </div>
-        <AuthPanel />
       </section>
 
       <SiteFooter />

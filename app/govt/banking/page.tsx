@@ -1,9 +1,8 @@
 import InquiryForm from "../../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import TrackCoursesList from "../../../components/TrackCoursesList";
-import TopPerformersList from "../../../components/TopPerformersList";
-import TeachersList from "../../../components/TeachersList";
 
 export default function BankingPage() {
   return (
@@ -23,22 +22,31 @@ export default function BankingPage() {
           </div>
         </div>
         <div className="bank-panel">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+              alt="Banking exam preparation and finance study"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>Exam map</h3>
           <div className="bank-grid">
             <div>
               <span>Prelims</span>
               <strong>Speed drills</strong>
-+              <p>Quant + Reasoning sprint sets.</p>
+              <p>Quant + reasoning sprint sets.</p>
             </div>
             <div>
               <span>Mains</span>
               <strong>Accuracy focus</strong>
-+              <p>DI + GA + English mastery.</p>
+              <p>DI, GA, and English mastery.</p>
             </div>
             <div>
               <span>Interview</span>
               <strong>Ready kit</strong>
-+              <p>Mock interviews + GD practice.</p>
+              <p>Mock interviews + GD practice.</p>
             </div>
           </div>
         </div>
@@ -65,34 +73,6 @@ export default function BankingPage() {
         </div>
       </section>
 
-      <section className="section split">
-        <div>
-          <h2>Weekly pace</h2>
-          <p className="hero-subtitle">
-            Keep the momentum with speed tests and mock reviews.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Tuesday</strong>
-              <span>Prelims speed set + analysis</span>
-            </div>
-            <div>
-              <strong>Thursday</strong>
-              <span>Mains sectional test + GA drill</span>
-            </div>
-            <div>
-              <strong>Sunday</strong>
-              <span>Full mock + mentor review</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next banking mock</h3>
-          <p>Saturday 6:00 PM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
       <section className="section">
         <div className="section-head">
           <h2>Banking courses</h2>
@@ -101,26 +81,10 @@ export default function BankingPage() {
         <TrackCoursesList track="govt-banking" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent banking results from our focused batches.</p>
-        </div>
-        <TopPerformersList track="govt-banking" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>Banking faculty</h2>
-          <p>Experts for DI, reasoning, English, and GA.</p>
-        </div>
-        <TeachersList track="govt-banking" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your banking plan</h2>
-          <p>Share your target exam and we will map your plan.</p>
+          <p>Share your target exam and get a focused weekly roadmap.</p>
         </div>
         <InquiryForm />
       </section>

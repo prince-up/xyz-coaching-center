@@ -95,7 +95,7 @@ export default function AdminPanel() {
       return;
     }
     const loadAdmin = async () => {
-      const { data } = await supabase.auth.getSession();
+      const { data } = await supabase!.auth.getSession();
       setEmail(data.session?.user.email ?? null);
       setLoading(false);
     };
@@ -109,32 +109,32 @@ export default function AdminPanel() {
         return;
       }
 
-      const { data: inquiryData, error: inquiryError } = await supabase
+      const { data: inquiryData, error: inquiryError } = await supabase!
         .from("inquiries")
         .select("id, name, phone, email, message, created_at")
         .order("created_at", { ascending: false });
 
-      const { data: courseData, error: courseError } = await supabase
+      const { data: courseData, error: courseError } = await supabase!
         .from("courses")
         .select("id, title, description, price")
         .order("created_at", { ascending: false });
 
-      const { data: lectureData, error: lectureError } = await supabase
+      const { data: lectureData, error: lectureError } = await supabase!
         .from("lectures")
         .select("id, title, track, topic, teacher, video_url")
         .order("created_at", { ascending: false });
 
-      const { data: materialData, error: materialError } = await supabase
+      const { data: materialData, error: materialError } = await supabase!
         .from("materials_library")
         .select("id, title, track, kind, pages, file_url")
         .order("created_at", { ascending: false });
 
-      const { data: announcementData, error: announcementError } = await supabase
+      const { data: announcementData, error: announcementError } = await supabase!
         .from("announcements")
         .select("id, title, detail")
         .order("created_at", { ascending: false });
 
-      const { data: doubtData, error: doubtError } = await supabase
+      const { data: doubtData, error: doubtError } = await supabase!
         .from("doubts")
         .select("id, title, question, subject, status")
         .order("created_at", { ascending: false })
@@ -173,7 +173,7 @@ export default function AdminPanel() {
 
   const addCourse = async () => {
     setNotice(null);
-    const { error } = await supabase.from("courses").insert([
+    const { error } = await supabase!.from("courses").insert([
       {
         title: courseForm.title,
         description: courseForm.description,
@@ -187,7 +187,7 @@ export default function AdminPanel() {
     }
 
     setCourseForm({ title: "", description: "", price: "" });
-    const { data } = await supabase
+    const { data } = await supabase!
       .from("courses")
       .select("id, title, description, price")
       .order("created_at", { ascending: false });
@@ -195,13 +195,13 @@ export default function AdminPanel() {
   };
 
   const deleteCourse = async (id: number) => {
-    await supabase.from("courses").delete().eq("id", id);
+    await supabase!.from("courses").delete().eq("id", id);
     setCourses((prev) => prev.filter((course) => course.id !== id));
   };
 
   const addLecture = async () => {
     setNotice(null);
-    const { error } = await supabase.from("lectures").insert([
+    const { error } = await supabase!.from("lectures").insert([
       {
         title: lectureForm.title,
         track: lectureForm.track || null,
@@ -231,7 +231,7 @@ export default function AdminPanel() {
 
   const addMaterial = async () => {
     setNotice(null);
-    const { error } = await supabase.from("materials_library").insert([
+    const { error } = await supabase!.from("materials_library").insert([
       {
         title: materialForm.title,
         track: materialForm.track || null,
@@ -257,7 +257,7 @@ export default function AdminPanel() {
 
   const addAnnouncement = async () => {
     setNotice(null);
-    const { error } = await supabase.from("announcements").insert([
+    const { error } = await supabase!.from("announcements").insert([
       { title: announcementForm.title, detail: announcementForm.detail }
     ]);
 
@@ -273,14 +273,14 @@ export default function AdminPanel() {
     const reply = replyForm[id];
     if (!reply) return;
 
-    await supabase.from("doubt_replies").insert([
+    await supabase!.from("doubt_replies").insert([
       {
         doubt_id: id,
         teacher_name: adminEmail,
         reply
       }
     ]);
-    await supabase.from("doubts").update({ status: "answered" }).eq("id", id);
+    await supabase!.from("doubts").update({ status: "answered" }).eq("id", id);
     setReplyForm((prev) => ({ ...prev, [id]: "" }));
   };
 

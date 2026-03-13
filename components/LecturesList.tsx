@@ -59,7 +59,7 @@ export default function LecturesList() {
 
     const loadLectures = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("lectures")
         .select(
           "id, title, track, topic, teacher, video_url, duration_minutes"

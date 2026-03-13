@@ -66,7 +66,7 @@ export default function StateExamsPage() {
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">Select Your State</h2>
-          <p className="text-gray-500 text-lg">Exam-specific courses tailored to your state's syllabus and pattern</p>
+          <p className="text-gray-500 text-lg">Exam-specific courses tailored to your state&apos;s syllabus and pattern</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stateExams.map((item) => (

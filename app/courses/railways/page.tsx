@@ -103,7 +103,7 @@ export default function RailwaysPage() {
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-6 min-w-[280px]">
-              <h3 className="font-bold text-lg mb-4">What's Included</h3>
+              <h3 className="font-bold text-lg mb-4">What&apos;s Included</h3>
               {["CBT 1 & CBT 2 Complete Coverage", "Railway GK & Current Affairs", "Physics, Math & Reasoning", "Previous 10 Year Papers", "Physical Test Guidance"].map(f => (
                 <div key={f} className="flex items-center gap-2 mb-2 text-blue-100 text-sm">
                   <span className="text-green-400">✓</span> {f}
@@ -117,7 +117,7 @@ export default function RailwaysPage() {
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">Choose Your Railway Exam</h2>
-          <p className="text-gray-500 text-lg">Join India's largest railway exam coaching platform</p>
+          <p className="text-gray-500 text-lg">Join India&apos;s largest railway exam coaching platform</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {railwayExams.map((exam) => (

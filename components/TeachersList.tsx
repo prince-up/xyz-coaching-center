@@ -28,7 +28,7 @@ export default function TeachersList({ track, limit = 6 }: Props) {
 
     const fetchTeachers = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("teachers")
         .select("id, name, subject, experience")
         .eq("track", track)

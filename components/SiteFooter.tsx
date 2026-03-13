@@ -1,53 +1,63 @@
 export default function SiteFooter() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer">
-      {/* Brand + Address */}
-      <div>
+      <div className="footer-meta">
         <strong>L1 Coaching Center</strong>
-        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.88rem" }}>
-          JEE Main + Advanced · NEET · SSC · Banking · Railways
+        <p className="footer-tagline">
+          Structured preparation for JEE, NEET, SSC, Banking, Railways, and
+          State exams.
         </p>
         <address>
-          📍 Near Durgakund Temple, Durgakund<br />
-          Varanasi (Banaras), Uttar Pradesh — 221 005
+          Durgakund, Varanasi, Uttar Pradesh 221005<br />
+          Mon to Sat, 9:00 AM to 8:00 PM
         </address>
-        <div className="footer-accent-pill">⭐ Trusted since 2010</div>
+        <div className="footer-accent-pill">Trusted by 3,50,000+ learners</div>
       </div>
 
-      {/* Courses */}
-      <div className="footer-links">
-        <strong>Courses</strong>
-        <a href="/jee">⚛ JEE Main + Advanced</a>
-        <a href="/neet">🧬 NEET Focused Track</a>
-        <a href="/govt/ssc">📋 SSC Exams</a>
-        <a href="/govt/banking">🏦 Banking Exams</a>
-        <a href="/govt/railways">🚆 Railway Exams</a>
-        <a href="/courses">All Courses →</a>
+      <div className="footer-grid">
+        <div className="footer-links">
+          <strong>Programs</strong>
+          <a href="/jee">JEE Main + Advanced</a>
+          <a href="/neet">NEET Track</a>
+          <a href="/govt/ssc">SSC Exams</a>
+          <a href="/govt/banking">Banking Exams</a>
+          <a href="/govt/railways">Railway Exams</a>
+        </div>
+
+        <div className="footer-links">
+          <strong>Platform</strong>
+          <a href="/tests">Test Series</a>
+          <a href="/lectures">Video Lectures</a>
+          <a href="/materials">Study Materials</a>
+          <a href="/doubts">Doubt Support</a>
+          <a href="/dashboard">Student Dashboard</a>
+        </div>
+
+        <div className="footer-links">
+          <strong>Company</strong>
+          <a href="/courses">All Courses</a>
+          <a href="/admin">Admin</a>
+          <a href="/login">Login</a>
+          <a href="/signup">Create Account</a>
+        </div>
+
+        <div className="footer-links">
+          <strong>Support</strong>
+          <a href="mailto:hello@l1coaching.in">hello@l1coaching.in</a>
+          <a href="tel:+919415000000">+91 94150 00000</a>
+          <span>Response window: within 24 hours</span>
+        </div>
       </div>
 
-      {/* Resources */}
-      <div className="footer-links">
-        <strong>Resources</strong>
-        <a href="/tests">📝 Test Series</a>
-        <a href="/lectures">🎥 Video Lectures</a>
-        <a href="/materials">📚 Study Materials</a>
-        <a href="/doubts">💬 Doubt Board</a>
-        <a href="/dashboard">📊 Dashboard</a>
-      </div>
-
-      {/* Contact */}
-      <div className="footer-links">
-        <strong>Contact Us</strong>
-        <a href="mailto:hello@l1coaching.in">📧 hello@l1coaching.in</a>
-        <a href="tel:+919415000000">📞 +91 94150 00000</a>
-        <span>🕘 Mon – Sat · 9 AM – 8 PM</span>
-        <span>🚶 Walk-ins welcome at Durgakund</span>
-      </div>
-
-      {/* Copyright row */}
       <div className="footer-copy">
-        <span>© 2026 L1 Coaching Center, Varanasi. All rights reserved.</span>
-        <span>Empowering students across UP since 2010 🎓</span>
+        <span>© {year} L1 Coaching Center. All rights reserved.</span>
+        <div className="footer-legal-links">
+          <a href="/login">Terms</a>
+          <a href="/signup">Privacy</a>
+          <a href="/doubts">Support Center</a>
+        </div>
       </div>
     </footer>
   );

@@ -55,7 +55,7 @@ export default function MaterialsLibrary() {
 
     const loadMaterials = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("materials_library")
         .select("id, title, track, kind, pages, file_url")
         .order("created_at", { ascending: false })

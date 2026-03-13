@@ -1,4 +1,5 @@
 import CourseList from "../components/CourseList";
+import HeroAnimatedBackdrop from "../components/HeroAnimatedBackdrop";
 import InquiryForm from "../components/InquiryForm";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="page" id="main-content">
       <SiteHeader />
       <header className="hero hero-banner">
+        <HeroAnimatedBackdrop />
         <div className="hero-banner-copy">
           <span className="banner-pill">Scholarship + Admission Test</span>
           <h1>One exam. One plan. Better rank outcomes.</h1>

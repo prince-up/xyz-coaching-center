@@ -68,7 +68,7 @@ export default function DoubtsBoard() {
 
     const loadDoubts = async () => {
       setLoading(true);
-      const { data: sessionData } = await supabase.auth.getSession();
+      const { data: sessionData } = await supabase!.auth.getSession();
       const userId = sessionData.session?.user.id;
 
       if (!userId) {
@@ -79,13 +79,13 @@ export default function DoubtsBoard() {
         return;
       }
 
-      const { data: doubtsData, error: doubtsError } = await supabase
+      const { data: doubtsData, error: doubtsError } = await supabase!
         .from("doubts")
         .select("id, title, question, subject, status")
         .eq("user_id", userId)
         .order("created_at", { ascending: false });
 
-      const { data: replyData } = await supabase
+      const { data: replyData } = await supabase!
         .from("doubt_replies")
         .select("id, doubt_id, teacher_name, reply")
         .order("created_at", { ascending: false });
@@ -112,7 +112,7 @@ export default function DoubtsBoard() {
       return;
     }
 
-    const { data: sessionData } = await supabase.auth.getSession();
+    const { data: sessionData } = await supabase!.auth.getSession();
     const userId = sessionData.session?.user.id;
 
     if (!userId) {
@@ -120,7 +120,7 @@ export default function DoubtsBoard() {
       return;
     }
 
-    const { error } = await supabase.from("doubts").insert({
+    const { error } = await supabase!.from("doubts").insert({
       user_id: userId,
       title: form.title,
       subject: form.subject,

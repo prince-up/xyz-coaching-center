@@ -1,9 +1,8 @@
 import InquiryForm from "../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import TrackCoursesList from "../../components/TrackCoursesList";
-import TopPerformersList from "../../components/TopPerformersList";
-import TeachersList from "../../components/TeachersList";
 
 export default function JeePage() {
   return (
@@ -12,11 +11,10 @@ export default function JeePage() {
       <section className="page-hero">
         <div>
           <p className="badge">JEE Main + Advanced</p>
-          <h1>JEE prep powered by the same system that runs every track.</h1>
+          <h1>JEE preparation engineered for rank growth.</h1>
           <p className="hero-subtitle">
-            L1 runs JEE, NEET, and Govt prep under one outcome-driven system.
-            For JEE, that means advanced problem clinics and weekly rank
-            diagnostics.
+            Advanced problem practice, weekly diagnostics, and mentor-led
+            correction loops designed to improve rank with consistency.
           </p>
           <div className="hero-actions">
             <a className="primary" href="#inquiry">Book counseling</a>
@@ -24,6 +22,15 @@ export default function JeePage() {
           </div>
         </div>
         <div className="hero-visual">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1200&q=80"
+              alt="JEE students practicing mathematics and physics"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>JEE learning loop</h3>
           <ul>
             <li>Concept sprint + DPP daily</li>
@@ -52,12 +59,12 @@ export default function JeePage() {
           <article className="phase-card">
             <span className="pill">Phase 1</span>
             <h3>Concept depth</h3>
-            <p>PCM fundamentals, DPP discipline, and weekly diagnostics.</p>
+            <p>PCM fundamentals and daily disciplined practice.</p>
           </article>
           <article className="phase-card">
             <span className="pill">Phase 2</span>
             <h3>Problem mastery</h3>
-            <p>Advanced sheets, mixed-chapter drills, time-bound practice.</p>
+            <p>Advanced sheets, mixed drills, and timed solving strategy.</p>
           </article>
           <article className="phase-card">
             <span className="pill">Phase 3</span>
@@ -100,35 +107,6 @@ export default function JeePage() {
         </div>
       </section>
 
-      <section className="section split">
-        <div>
-          <h2>Subject mastery plan</h2>
-          <p className="hero-subtitle">
-            Weekly diagnostics for Physics, Chemistry, and Mathematics with
-            precision feedback.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Physics</strong>
-              <span>Conceptual depth + calculus-based problem sets.</span>
-            </div>
-            <div>
-              <strong>Chemistry</strong>
-              <span>NCERT precision + advanced organic practice.</span>
-            </div>
-            <div>
-              <strong>Mathematics</strong>
-              <span>Speed-building drills and advanced problem marathons.</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next JEE mock test</h3>
-          <p>Sunday 9:00 AM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
       <section className="section">
         <div className="section-head">
           <h2>JEE courses</h2>
@@ -137,26 +115,10 @@ export default function JeePage() {
         <TrackCoursesList track="jee" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent JEE results from our mentor-led batches.</p>
-        </div>
-        <TopPerformersList track="jee" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>Faculty for JEE</h2>
-          <p>Subject experts guiding Physics, Chemistry, and Mathematics.</p>
-        </div>
-        <TeachersList track="jee" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your JEE roadmap</h2>
-          <p>Share your targets and get a mentor-designed weekly plan.</p>
+          <p>Share your target rank and get a mentor-designed weekly plan.</p>
         </div>
         <InquiryForm />
       </section>

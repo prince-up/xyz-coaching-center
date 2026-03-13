@@ -1,9 +1,8 @@
 import InquiryForm from "../../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import TrackCoursesList from "../../../components/TrackCoursesList";
-import TopPerformersList from "../../../components/TopPerformersList";
-import TeachersList from "../../../components/TeachersList";
 
 export default function SscPage() {
   return (
@@ -23,6 +22,15 @@ export default function SscPage() {
           </div>
         </div>
         <div className="ssc-panel">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80"
+              alt="SSC aspirants solving practice papers"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>Tier readiness</h3>
           <div className="ssc-steps">
             <div>
@@ -35,7 +43,7 @@ export default function SscPage() {
             </div>
             <div>
               <strong>Interview</strong>
-              <span>Mock interviews + GK updates</span>
+              <span>Mock interviews and GK updates</span>
             </div>
           </div>
           <div className="ssc-metrics">
@@ -53,8 +61,8 @@ export default function SscPage() {
 
       <section className="section">
         <div className="section-head">
-          <h2>SSC dashboard modules</h2>
-          <p>Keep every subject moving with micro-targets.</p>
+          <h2>SSC modules</h2>
+          <p>Focused practice blocks for each subject area.</p>
         </div>
         <div className="module-grid">
           <article className="module-card">
@@ -76,34 +84,6 @@ export default function SscPage() {
         </div>
       </section>
 
-      <section className="section split">
-        <div>
-          <h2>Tier-wise schedule</h2>
-          <p className="hero-subtitle">
-            Every week includes sectional tests and a full mock.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Monday</strong>
-              <span>Quant + Reasoning timed drills</span>
-            </div>
-            <div>
-              <strong>Wednesday</strong>
-              <span>GK + English mock set</span>
-            </div>
-            <div>
-              <strong>Saturday</strong>
-              <span>Full-length SSC mock + analysis</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next SSC mock</h3>
-          <p>Sunday 10:00 AM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
       <section className="section">
         <div className="section-head">
           <h2>SSC courses</h2>
@@ -112,26 +92,10 @@ export default function SscPage() {
         <TrackCoursesList track="govt-ssc" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent SSC results from our mentor-led batches.</p>
-        </div>
-        <TopPerformersList track="govt-ssc" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>SSC faculty</h2>
-          <p>Experts for quant, reasoning, English, and GA.</p>
-        </div>
-        <TeachersList track="govt-ssc" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your SSC plan</h2>
-          <p>Share your target exam and we will map your plan.</p>
+          <p>Share your target exam and get a practical weekly roadmap.</p>
         </div>
         <InquiryForm />
       </section>

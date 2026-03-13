@@ -60,7 +60,7 @@ export default function TestsList() {
 
     const loadTests = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("tests")
         .select(
           "id, title, track, type, total_questions, duration_minutes, negative_mark"

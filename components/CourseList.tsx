@@ -22,7 +22,7 @@ export default function CourseList() {
     }
     const fetchCourses = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("courses")
         .select("id, title, description, price")
         .order("created_at", { ascending: false });

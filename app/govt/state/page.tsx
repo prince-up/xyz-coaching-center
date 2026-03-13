@@ -1,9 +1,8 @@
 import InquiryForm from "../../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import TrackCoursesList from "../../../components/TrackCoursesList";
-import TopPerformersList from "../../../components/TopPerformersList";
-import TeachersList from "../../../components/TeachersList";
 
 export default function StateExamsPage() {
   return (
@@ -23,6 +22,15 @@ export default function StateExamsPage() {
           </div>
         </div>
         <div className="state-panel">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=1200&q=80"
+              alt="State exam preparation with regional study notes"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>State focus</h3>
           <div className="state-tags">
             <span className="pill">UP</span>
@@ -32,7 +40,7 @@ export default function StateExamsPage() {
             <span className="pill">Punjab</span>
           </div>
           <p className="muted-text">
-            Weekly state GK updates and policy summaries.
+            Weekly state GK updates with policy summaries.
           </p>
         </div>
       </section>
@@ -58,34 +66,6 @@ export default function StateExamsPage() {
         </div>
       </section>
 
-      <section className="section split">
-        <div>
-          <h2>Weekly cadence</h2>
-          <p className="hero-subtitle">
-            State-wise current affairs + monthly revision tests.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Tuesday</strong>
-              <span>State GK briefing + quiz</span>
-            </div>
-            <div>
-              <strong>Friday</strong>
-              <span>Quant + reasoning test</span>
-            </div>
-            <div>
-              <strong>Sunday</strong>
-              <span>Full state mock + mentor review</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next State mock</h3>
-          <p>Saturday 9:00 AM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
       <section className="section">
         <div className="section-head">
           <h2>State exam courses</h2>
@@ -94,26 +74,10 @@ export default function StateExamsPage() {
         <TrackCoursesList track="govt-state" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent state exam results from our mentor-led batches.</p>
-        </div>
-        <TopPerformersList track="govt-state" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>State exam faculty</h2>
-          <p>Experts for state GK, CSAT, and language prep.</p>
-        </div>
-        <TeachersList track="govt-state" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your state exam plan</h2>
-          <p>Share your state and exam target to get a custom roadmap.</p>
+          <p>Share your state target and get a custom weekly roadmap.</p>
         </div>
         <InquiryForm />
       </section>

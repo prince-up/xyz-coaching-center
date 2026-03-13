@@ -1,9 +1,8 @@
 import InquiryForm from "../../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import TrackCoursesList from "../../../components/TrackCoursesList";
-import TopPerformersList from "../../../components/TopPerformersList";
-import TeachersList from "../../../components/TeachersList";
 
 export default function RailwaysPage() {
   return (
@@ -23,6 +22,15 @@ export default function RailwaysPage() {
           </div>
         </div>
         <div className="rail-panel">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1200&q=80"
+              alt="Railway preparation with train and schedule context"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>Shift strategy</h3>
           <div className="rail-list">
             <div>
@@ -66,34 +74,6 @@ export default function RailwaysPage() {
         </div>
       </section>
 
-      <section className="section split">
-        <div>
-          <h2>Weekly cadence</h2>
-          <p className="hero-subtitle">
-            Stay test-ready with multi-shift practice.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Monday</strong>
-              <span>Quant + Reasoning sprint tests</span>
-            </div>
-            <div>
-              <strong>Wednesday</strong>
-              <span>GK drill + revision quiz</span>
-            </div>
-            <div>
-              <strong>Saturday</strong>
-              <span>Railways full mock + analysis</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next Railways mock</h3>
-          <p>Sunday 8:00 AM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
       <section className="section">
         <div className="section-head">
           <h2>Railways courses</h2>
@@ -102,26 +82,10 @@ export default function RailwaysPage() {
         <TrackCoursesList track="govt-railways" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent railways results from our mentor-led batches.</p>
-        </div>
-        <TopPerformersList track="govt-railways" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>Railways faculty</h2>
-          <p>Experts for arithmetic, reasoning, science, and GK.</p>
-        </div>
-        <TeachersList track="govt-railways" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your railway plan</h2>
-          <p>Share your target exam and we will map your plan.</p>
+          <p>Share your target exam and get a clear weekly action roadmap.</p>
         </div>
         <InquiryForm />
       </section>

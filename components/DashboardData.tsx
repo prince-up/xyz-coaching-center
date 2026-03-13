@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import AuthPanel from "./AuthPanel";
 import DashboardCharts from "./DashboardCharts";
 import { isSupabaseReady, supabase } from "../lib/supabaseClient";
 
@@ -9,10 +10,16 @@ type Enrollment = {
   progress: number | null;
   next_class_at: string | null;
   next_class_label: string | null;
-  track_courses: {
-    title: string;
-    description: string | null;
-  } | null;
+  track_courses:
+    | {
+        title: string;
+        description: string | null;
+      }
+    | Array<{
+        title: string;
+        description: string | null;
+      }>
+    | null;
 };
 
 type UpcomingClass = {
@@ -80,7 +87,7 @@ export default function DashboardData() {
   const [weakTopics, setWeakTopics] = useState<WeakTopic[]>([]);
   const [studyTasks, setStudyTasks] = useState<StudyTask[]>([]);
 
-  const demoData = {
+  const demoData = useMemo(() => ({
     enrollments: [
       {
         id: 1,
@@ -179,7 +186,7 @@ export default function DashboardData() {
       { id: 2, title: "Revise Magnetism notes", detail: "30 minutes" },
       { id: 3, title: "Attempt Govt DI speed set", detail: "20 questions" }
     ]
-  };
+  }), []);
 
   useEffect(() => {
     if (!supabase || !isSupabaseReady) {
@@ -199,7 +206,7 @@ export default function DashboardData() {
     const loadDashboard = async () => {
       setLoading(true);
       setMessage(null);
-      const { data: sessionData } = await supabase.auth.getSession();
+      const { data: sessionData } = await supabase!.auth.getSession();
       const userId = sessionData.session?.user.id;
 
       if (!userId) {
@@ -225,44 +232,44 @@ export default function DashboardData() {
         weakTopicsRes,
         tasksRes
       ] = await Promise.all([
-        supabase
+        supabase!
           .from("student_enrollments")
           .select(
             "id, progress, next_class_at, next_class_label, track_courses(title, description)"
           )
           .eq("user_id", userId)
           .order("created_at", { ascending: false }),
-        supabase
+        supabase!
           .from("upcoming_classes")
           .select("id, title, starts_at, track")
           .eq("user_id", userId)
           .order("starts_at", { ascending: true })
           .limit(5),
-        supabase
+        supabase!
           .from("test_attempts")
           .select("id, score, total, accuracy, rank, created_at")
           .eq("user_id", userId)
           .order("created_at", { ascending: false })
           .limit(5),
-        supabase
+        supabase!
           .from("notifications")
           .select("id, title, detail, created_at")
           .eq("user_id", userId)
           .order("created_at", { ascending: false })
           .limit(6),
-        supabase
+        supabase!
           .from("study_materials")
           .select("id, title, kind, pages")
           .eq("user_id", userId)
           .order("created_at", { ascending: false })
           .limit(6),
-        supabase
+        supabase!
           .from("weak_topics")
           .select("id, topic, accuracy")
           .eq("user_id", userId)
           .order("accuracy", { ascending: true })
           .limit(3),
-        supabase
+        supabase!
           .from("study_tasks")
           .select("id, title, detail")
           .eq("user_id", userId)
@@ -302,7 +309,7 @@ export default function DashboardData() {
     };
 
     loadDashboard();
-  }, []);
+  }, [demoData]);
 
   const overallProgress = useMemo(() => {
     if (!enrollments.length) return 0;
@@ -330,6 +337,41 @@ export default function DashboardData() {
           Showing demo data. Sign in to see your personal dashboard.
         </div>
       ) : null}
+
+      <section className="section split" id="profile-account">
+        <div className="panel">
+          <h2>Profile and account</h2>
+          <p className="muted-text">
+            Edit personal details, sign in, and keep your dashboard synced.
+          </p>
+          <AuthPanel />
+        </div>
+        <div className="panel">
+          <h3>Your quick summary</h3>
+          <div className="metric-row">
+            <div>
+              <span>Enrolled courses</span>
+              <strong>{enrollments.length}</strong>
+            </div>
+            <div>
+              <span>Upcoming classes</span>
+              <strong>{upcomingClasses.length}</strong>
+            </div>
+            <div>
+              <span>Latest test score</span>
+              <strong>
+                {latestAttempt
+                  ? `${latestAttempt.score}/${latestAttempt.total}`
+                  : "-"}
+              </strong>
+            </div>
+          </div>
+          <p className="muted-text">
+            Total materials: {materials.length} · Pending tasks: {studyTasks.length}
+          </p>
+        </div>
+      </section>
+
       <section className="section">
         <div className="section-head">
           <h2>Enrolled courses</h2>
@@ -339,30 +381,36 @@ export default function DashboardData() {
           <div className="notice">No enrollments yet.</div>
         ) : (
           <div className="course-grid">
-            {enrollments.map((enrollment) => (
-              <article key={enrollment.id} className="course-card">
-                <h3>{enrollment.track_courses?.title ?? "Course"}</h3>
-                <p>{enrollment.track_courses?.description ?? ""}</p>
-                <div className="progress-row">
-                  <span>Progress</span>
-                  <strong>{enrollment.progress ?? 0}%</strong>
-                </div>
-                <div className="progress-bar">
-                  <div
-                    className="progress-fill"
-                    style={{ width: `${enrollment.progress ?? 0}%` }}
-                  />
-                </div>
-                {enrollment.next_class_label || enrollment.next_class_at ? (
-                  <span className="profile-meta">
-                    {enrollment.next_class_label
-                      ? `${enrollment.next_class_label} · `
-                      : ""}
-                    {formatDateTime(enrollment.next_class_at)}
-                  </span>
-                ) : null}
-              </article>
-            ))}
+            {enrollments.map((enrollment) => {
+              const course = Array.isArray(enrollment.track_courses)
+                ? enrollment.track_courses[0]
+                : enrollment.track_courses;
+
+              return (
+                <article key={enrollment.id} className="course-card">
+                  <h3>{course?.title ?? "Course"}</h3>
+                  <p>{course?.description ?? ""}</p>
+                  <div className="progress-row">
+                    <span>Progress</span>
+                    <strong>{enrollment.progress ?? 0}%</strong>
+                  </div>
+                  <div className="progress-bar">
+                    <div
+                      className="progress-fill"
+                      style={{ width: `${enrollment.progress ?? 0}%` }}
+                    />
+                  </div>
+                  {enrollment.next_class_label || enrollment.next_class_at ? (
+                    <span className="profile-meta">
+                      {enrollment.next_class_label
+                        ? `${enrollment.next_class_label} · `
+                        : ""}
+                      {formatDateTime(enrollment.next_class_at)}
+                    </span>
+                  ) : null}
+                </article>
+              );
+            })}
           </div>
         )}
       </section>

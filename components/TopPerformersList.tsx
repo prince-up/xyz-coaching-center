@@ -28,7 +28,7 @@ export default function TopPerformersList({ track, limit = 6 }: Props) {
 
     const fetchPerformers = async () => {
       setLoading(true);
-      const { data, error: fetchError } = await supabase
+      const { data, error: fetchError } = await supabase!
         .from("top_performers")
         .select("id, name, achievement, year")
         .eq("track", track)

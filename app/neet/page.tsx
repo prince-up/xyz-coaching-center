@@ -1,9 +1,8 @@
 import InquiryForm from "../../components/InquiryForm";
+import Image from "next/image";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import TrackCoursesList from "../../components/TrackCoursesList";
-import TopPerformersList from "../../components/TopPerformersList";
-import TeachersList from "../../components/TeachersList";
 
 export default function NeetPage() {
   return (
@@ -12,10 +11,10 @@ export default function NeetPage() {
       <section className="page-hero">
         <div>
           <p className="badge">NEET Focused Track</p>
-          <h1>NEET preparation with precision, pace, and MCQ control.</h1>
+          <h1>NEET preparation built for score improvement.</h1>
           <p className="hero-subtitle">
-            Biology-first learning loop with daily practice, revision cycles,
-            and exam-aligned mock tests.
+            Biology-first strategy with daily MCQ control, revision cycles, and
+            exam-aligned full-length mocks.
           </p>
           <div className="hero-actions">
             <a className="primary" href="#inquiry">Book counseling</a>
@@ -23,6 +22,15 @@ export default function NeetPage() {
           </div>
         </div>
         <div className="hero-visual">
+          <div className="panel-image">
+            <Image
+              src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80"
+              alt="Medical study setup for NEET preparation"
+              fill
+              sizes="(max-width: 768px) 100vw, 420px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <h3>NEET practice system</h3>
           <ul>
             <li>Daily MCQ drills with accuracy tracking</li>
@@ -51,12 +59,12 @@ export default function NeetPage() {
           <article className="phase-card">
             <span className="pill">Phase 1</span>
             <h3>Concept clarity</h3>
-            <p>NCERT-aligned teaching and foundational MCQ practice.</p>
+            <p>NCERT-first teaching and foundational MCQ control.</p>
           </article>
           <article className="phase-card">
             <span className="pill">Phase 2</span>
             <h3>Speed building</h3>
-            <p>Topic-wise test cycles with daily accuracy tracking.</p>
+            <p>Topic test cycles with strict daily accuracy checks.</p>
           </article>
           <article className="phase-card">
             <span className="pill">Phase 3</span>
@@ -99,35 +107,6 @@ export default function NeetPage() {
         </div>
       </section>
 
-      <section className="section split">
-        <div>
-          <h2>Subject mastery plan</h2>
-          <p className="hero-subtitle">
-            Weekly diagnostics for Biology, Chemistry, and Physics with
-            precision feedback.
-          </p>
-          <div className="timeline">
-            <div>
-              <strong>Biology</strong>
-              <span>NCERT-aligned teaching + daily MCQ sets.</span>
-            </div>
-            <div>
-              <strong>Chemistry</strong>
-              <span>High-yield chapters with reaction flow mastery.</span>
-            </div>
-            <div>
-              <strong>Physics</strong>
-              <span>Formula drills, numericals, and exam simulations.</span>
-            </div>
-          </div>
-        </div>
-        <div className="cta-band">
-          <h3>Next NEET mock test</h3>
-          <p>Saturday 8:30 AM · Online + Classroom · Free for new students.</p>
-          <a className="ghost" href="#inquiry">Reserve a seat</a>
-        </div>
-      </section>
-
       <section className="section">
         <div className="section-head">
           <h2>NEET courses</h2>
@@ -136,26 +115,10 @@ export default function NeetPage() {
         <TrackCoursesList track="neet" />
       </section>
 
-      <section className="section">
-        <div className="section-head">
-          <h2>Top performers</h2>
-          <p>Recent NEET results from our mentor-led batches.</p>
-        </div>
-        <TopPerformersList track="neet" />
-      </section>
-
-      <section className="section">
-        <div className="section-head">
-          <h2>Faculty for NEET</h2>
-          <p>Subject experts for Physics, Chemistry, and Biology.</p>
-        </div>
-        <TeachersList track="neet" />
-      </section>
-
       <section className="section highlight" id="inquiry">
         <div className="section-head">
           <h2>Start your NEET roadmap</h2>
-          <p>Share your targets and get a mentor-designed weekly plan.</p>
+          <p>Share your target score and get a mentor-designed weekly plan.</p>
         </div>
         <InquiryForm />
       </section>

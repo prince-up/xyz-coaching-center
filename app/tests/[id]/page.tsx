@@ -105,11 +105,11 @@ export default function TestRunnerPage() {
 
     const loadTest = async () => {
       setLoading(true);
-      const { data: testData, error: testError } = await supabase
-        .from("tests")
-        .select(
-          "id, title, track, type, total_questions, duration_minutes, negative_mark, marks_per_question"
-        )
+        const { data: testData, error: testError } = await supabase!
+          .from("tests")
+          .select(
+            "id, title, track, type, total_questions, duration_minutes, negative_mark, marks_per_question"
+          )
         .eq("id", Number(testId))
         .single();
 
@@ -122,9 +122,9 @@ export default function TestRunnerPage() {
         return;
       }
 
-      const { data: questionData, error: questionError } = await supabase
-        .from("test_questions")
-        .select("id, question_text, options, correct_index, subject")
+        const { data: questionData, error: questionError } = await supabase!
+          .from("test_questions")
+          .select("id, question_text, options, correct_index, subject")
         .eq("test_id", Number(testId))
         .order("id", { ascending: true });
 
