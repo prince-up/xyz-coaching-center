@@ -1,25 +1,38 @@
-import AuthPanel from "../components/AuthPanel";
 import CourseList from "../components/CourseList";
 import InquiryForm from "../components/InquiryForm";
-import AdminPanel from "../components/AdminPanel";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 
 export default function Home() {
+  const stickerItems = [
+    { label: "Get up to", value: "90%", sub: "Scholarship", tone: "" },
+    { label: "Ranked", value: "#1", sub: "Coaching in UP", tone: "sticker-blue" },
+    { label: "Expert", value: "25+", sub: "Faculty Verified", tone: "sticker-green" },
+    { label: "Proven", value: "98%", sub: "Results Rate", tone: "sticker-crimson" },
+    { label: "Doubts", value: "24x7", sub: "Mentor Support", tone: "sticker-violet" },
+    { label: "Daily", value: "2", sub: "Practice Tests", tone: "sticker-teal" },
+    { label: "Parents", value: "100%", sub: "Weekly Reports", tone: "sticker-amber" }
+  ];
+
   return (
-    <main className="page">
+    <main className="page" id="main-content">
       <SiteHeader />
-      <header className="hero">
-        <div className="hero-content">
-          <p className="badge">L1 Coaching Center · Mission Control</p>
-          <h1>Prep built like a system: visible, measured, unstoppable.</h1>
+      <header className="hero hero-banner">
+        <div className="hero-banner-copy">
+          <span className="banner-pill">Scholarship + Admission Test</span>
+          <h1>One exam. One plan. Better rank outcomes.</h1>
           <p className="hero-subtitle">
-            Weekly sprint planning, precision diagnostics, and mentor
-            interventions that keep every student on track.
+            Results-focused JEE, NEET, and Govt preparation with daily targets,
+            analytics, and expert mentor support.
           </p>
           <div className="hero-actions">
-            <a className="primary" href="#inquiry">Book a strategy call</a>
-            <a className="ghost" href="/courses">View live courses</a>
+            <a className="primary" href="#inquiry">Register for counseling</a>
+            <a className="ghost" href="/tests">Explore test series</a>
+          </div>
+          <div className="hero-trust-badges" aria-label="Trust badges">
+            <span>Google rating 4.9/5</span>
+            <span>Since 2010</span>
+            <span>3,50,000+ students mentored</span>
           </div>
           <div className="stat-strip">
             <div className="stat-card">
@@ -40,24 +53,60 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hero-card">
-          <h3>Next intake</h3>
-          <p className="hero-card-meta">April 2026 · Hybrid batches</p>
-          <ul>
-            <li>Diagnostic test + roadmap</li>
-            <li>Small-batch mentorship</li>
-            <li>Weekly parent progress report</li>
-          </ul>
-          <div className="hero-card-accent">
-            Limited seats for advanced batch
+        <div className="hero-banner-panel">
+          <div className="sticker-slider" aria-label="Highlights">
+            <div className="sticker-track">
+              {[...stickerItems, ...stickerItems].map((item, index) => (
+                <div
+                  className={`sticker ${item.tone}`.trim()}
+                  key={`${item.label}-${item.value}-${index}`}
+                >
+                  <span className="sticker-label">{item.label}</span>
+                  <strong>{item.value}</strong>
+                  <span className="sticker-sub">{item.sub}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="hero-banner-card">
+            <h3>April 2026 intake</h3>
+            <p className="hero-card-meta">Online + classroom · Jaipur</p>
+            <ul>
+              <li>Diagnostic test + roadmap</li>
+              <li>Small-batch mentorship</li>
+            </ul>
+            <div className="hero-card-accent">
+              Limited seats for advanced batch
+            </div>
           </div>
         </div>
       </header>
 
+      <section className="section why-parents">
+        <div className="section-head">
+          <h2>Why parents choose L1 Coaching</h2>
+          <p>Simple systems, visible progress, and timely mentor intervention.</p>
+        </div>
+        <div className="why-grid">
+          <article className="why-card">
+            <h3>Weekly transparent reporting</h3>
+            <p>Families get attendance, accuracy, and chapter completion updates.</p>
+          </article>
+          <article className="why-card">
+            <h3>Test analytics with action plan</h3>
+            <p>Every test is followed by error analysis and next-week targets.</p>
+          </article>
+          <article className="why-card">
+            <h3>Small-batch mentor accountability</h3>
+            <p>Each learner is tracked with regular checkpoints and quick doubt support.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="section">
         <div className="section-head">
-          <h2>Weekly command center</h2>
-          <p>Everything you need to track targets, tests, and outcomes.</p>
+          <h2>Your weekly progress dashboard</h2>
+          <p>Track targets, tests, and outcomes from one clear view.</p>
         </div>
         <div className="dashboard-grid">
           <div className="info-card">
@@ -108,8 +157,8 @@ export default function Home() {
 
       <section className="section">
         <div className="section-head">
-          <h2>Programs built for outcomes</h2>
-          <p>Choose a track and follow a clear, measurable plan.</p>
+          <h2>Programs designed for measurable results</h2>
+          <p>Pick a goal and follow a structured, trackable preparation path.</p>
         </div>
         <div className="program-grid">
           <article className="program-card">
@@ -245,6 +294,70 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section trust-strip" aria-label="Proof and credibility">
+        <p>Trusted by families from 180+ cities</p>
+        <div className="trust-list">
+          <span>Parent NPS 72</span>
+          <span>94% batch attendance</span>
+          <span>Daily mentor checkpoints</span>
+          <span>AI-assisted test analytics</span>
+          <span>Scholarship-driven admissions</span>
+        </div>
+      </section>
+
+      <section className="section success-section">
+        <div className="section-head">
+          <h2>Outcomes that are easy to verify</h2>
+          <p>
+            Real student progress cards, rank movement, and parent-visible
+            learning consistency.
+          </p>
+        </div>
+        <div className="success-grid">
+          <article className="success-card">
+            <span className="pill">JEE</span>
+            <h3>Arjun moved from AIR 31k to AIR 6.4k</h3>
+            <p>
+              Weekly strategy calls and error-book corrections turned test
+              attempts into scoring attempts.
+            </p>
+            <strong>+78 percentile jump in 7 months</strong>
+          </article>
+          <article className="success-card">
+            <span className="pill">NEET</span>
+            <h3>Sana raised Biology accuracy to 92%</h3>
+            <p>
+              Daily revision loops and memory maps improved retention and
+              reduced negative marking.
+            </p>
+            <strong>+143 marks across mock cycle</strong>
+          </article>
+          <article className="success-card">
+            <span className="pill">Govt</span>
+            <h3>Ravi cracked Banking PO on second attempt</h3>
+            <p>
+              Sectional speed drills and interview mentoring closed the final
+              gap between preparation and selection.
+            </p>
+            <strong>From pre cutoff to final merit list</strong>
+          </article>
+        </div>
+      </section>
+
+      <section className="section cta-spotlight">
+        <div>
+          <h2>Need a clear starting point?</h2>
+          <p>
+            Take a free diagnostic and receive a personalized 12-week action
+            plan from our mentors.
+          </p>
+        </div>
+        <div className="hero-actions">
+          <a className="primary" href="#inquiry">Book free counseling</a>
+          <a className="ghost" href="/tests">Take a sample test</a>
+        </div>
+      </section>
+
       <section className="section" id="courses">
         <div className="section-head">
           <h2>Courses aligned to your goal</h2>
@@ -266,7 +379,10 @@ export default function Home() {
         </div>
         <InquiryForm />
       </section>
-+      <SiteFooter />
-     </main>
-   );
- }
+
+      <a className="sticky-cta" href="#inquiry">Book Free Counseling</a>
+
+      <SiteFooter />
+    </main>
+  );
+}

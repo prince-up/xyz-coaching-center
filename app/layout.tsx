@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { DM_Serif_Display, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -17,6 +17,12 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "L1 Coaching Center",
   description: "Structured coaching for JEE Main + Advanced and NEET with measurable progress."
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

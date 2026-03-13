@@ -1,26 +1,53 @@
 export default function SiteFooter() {
   return (
     <footer className="footer">
-      <div className="footer-brand">
+      {/* Brand + Address */}
+      <div>
         <strong>L1 Coaching Center</strong>
-        <span>JEE Main + Advanced + NEET · Online + Classroom · Jaipur</span>
-        <p className="footer-note">
-          Results-first mentoring with daily practice, analytics, and support.
+        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.88rem" }}>
+          JEE Main + Advanced · NEET · SSC · Banking · Railways
         </p>
+        <address>
+          📍 Near Durgakund Temple, Durgakund<br />
+          Varanasi (Banaras), Uttar Pradesh — 221 005
+        </address>
+        <div className="footer-accent-pill">⭐ Trusted since 2010</div>
       </div>
+
+      {/* Courses */}
       <div className="footer-links">
-        <strong>Quick links</strong>
-        <a href="/courses">Courses</a>
-        <a href="/tests">Tests</a>
-        <a href="/lectures">Lectures</a>
-        <a href="/materials">Materials</a>
-        <a href="/doubts">Doubts</a>
+        <strong>Courses</strong>
+        <a href="/jee">⚛ JEE Main + Advanced</a>
+        <a href="/neet">🧬 NEET Focused Track</a>
+        <a href="/govt/ssc">📋 SSC Exams</a>
+        <a href="/govt/banking">🏦 Banking Exams</a>
+        <a href="/govt/railways">🚆 Railway Exams</a>
+        <a href="/courses">All Courses →</a>
       </div>
+
+      {/* Resources */}
       <div className="footer-links">
-        <strong>Contact</strong>
-        <a href="mailto:hello@l1coaching.in">hello@l1coaching.in</a>
-        <a href="tel:+919999999999">+91 99999 99999</a>
-        <span className="footer-note">Mon-Sat · 9:00 AM - 8:00 PM</span>
+        <strong>Resources</strong>
+        <a href="/tests">📝 Test Series</a>
+        <a href="/lectures">🎥 Video Lectures</a>
+        <a href="/materials">📚 Study Materials</a>
+        <a href="/doubts">💬 Doubt Board</a>
+        <a href="/dashboard">📊 Dashboard</a>
+      </div>
+
+      {/* Contact */}
+      <div className="footer-links">
+        <strong>Contact Us</strong>
+        <a href="mailto:hello@l1coaching.in">📧 hello@l1coaching.in</a>
+        <a href="tel:+919415000000">📞 +91 94150 00000</a>
+        <span>🕘 Mon – Sat · 9 AM – 8 PM</span>
+        <span>🚶 Walk-ins welcome at Durgakund</span>
+      </div>
+
+      {/* Copyright row */}
+      <div className="footer-copy">
+        <span>© 2026 L1 Coaching Center, Varanasi. All rights reserved.</span>
+        <span>Empowering students across UP since 2010 🎓</span>
       </div>
     </footer>
   );
