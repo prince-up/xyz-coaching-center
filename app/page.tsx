@@ -5,6 +5,24 @@ import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "L1 Coaching Center",
+    description:
+      "Outcome-driven coaching for JEE, NEET, SSC, Banking, Railways, and State exams.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Varanasi",
+      addressRegion: "Uttar Pradesh",
+      postalCode: "221005",
+      addressCountry: "IN"
+    },
+    telephone: "+91-94150-00000",
+    email: "hello@l1coaching.in",
+    areaServed: "India"
+  };
+
   const stickerItems = [
     { label: "Get up to", value: "90%", sub: "Scholarship", tone: "" },
     { label: "Ranked", value: "#1", sub: "Coaching in UP", tone: "sticker-blue" },
@@ -72,7 +90,7 @@ export default function Home() {
           </div>
           <div className="hero-banner-card">
             <h3>April 2026 intake</h3>
-            <p className="hero-card-meta">Online + classroom · Jaipur</p>
+            <p className="hero-card-meta">Online + classroom · Varanasi</p>
             <ul>
               <li>Diagnostic test + roadmap</li>
               <li>Small-batch mentorship</li>
@@ -83,6 +101,11 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <section className="section why-parents">
         <div className="section-head">
@@ -356,7 +379,34 @@ export default function Home() {
         </div>
         <div className="hero-actions">
           <a className="primary" href="#inquiry">Book free counseling</a>
-          <a className="ghost" href="/tests">Take a sample test</a>
+          <a className="ghost" href="/tests">Take a free sample test</a>
+        </div>
+      </section>
+
+      <section className="section lead-magnet" id="free-resources">
+        <div className="section-head">
+          <h2>Free resources to start today</h2>
+          <p>
+            Build trust before admission with free mocks, strategy sessions, and
+            downloadable revision material.
+          </p>
+        </div>
+        <div className="magnet-grid">
+          <article className="magnet-card">
+            <h3>Free full-length mock test</h3>
+            <p>Attempt a real-pattern mock and get instant score analysis.</p>
+            <a className="link" href="/tests">Start free mock</a>
+          </article>
+          <article className="magnet-card">
+            <h3>Weekly exam strategy class</h3>
+            <p>Attend a mentor session covering rank strategy and mistakes.</p>
+            <a className="link" href="#inquiry">Reserve your slot</a>
+          </article>
+          <article className="magnet-card">
+            <h3>Revision resources library</h3>
+            <p>Get notes, cheat sheets, and chapter-wise practice files.</p>
+            <a className="link" href="/materials">Access resources</a>
+          </article>
         </div>
       </section>
 
@@ -382,7 +432,42 @@ export default function Home() {
         <InquiryForm />
       </section>
 
-      <a className="sticky-cta" href="#inquiry">Book Free Counseling</a>
+      <section className="section faq-section" aria-label="Frequently asked questions">
+        <div className="section-head">
+          <h2>Common questions before joining</h2>
+          <p>Clear answers that help families decide quickly and confidently.</p>
+        </div>
+        <div className="faq-grid">
+          <details className="faq-item">
+            <summary>How soon will we get a counseling response?</summary>
+            <p>Usually within 24 hours by call or WhatsApp from our counselor team.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Do you offer online and classroom options?</summary>
+            <p>Yes. Most programs support both formats with identical weekly planning.</p>
+          </details>
+          <details className="faq-item">
+            <summary>Can we start with a demo or diagnostic test?</summary>
+            <p>Yes. You can take a free diagnostic and receive a 12-week starter plan.</p>
+          </details>
+          <details className="faq-item">
+            <summary>How is progress shared with parents?</summary>
+            <p>Weekly summaries include attendance, accuracy, completion, and next actions.</p>
+          </details>
+        </div>
+      </section>
+
+      <div className="floating-actions" aria-label="Quick actions">
+        <a className="sticky-cta" href="#inquiry">Book Free Counseling</a>
+        <a
+          className="whatsapp-cta"
+          href="https://wa.me/919415000000?text=Hi%20L1%20Coaching%2C%20I%20want%20counseling%20for%20my%20exam%20preparation."
+          target="_blank"
+          rel="noreferrer"
+        >
+          WhatsApp Us
+        </a>
+      </div>
 
       <SiteFooter />
     </main>

@@ -8,6 +8,8 @@ export default function InquiryForm() {
     name: "",
     phone: "",
     email: "",
+    examTarget: "",
+    classLevel: "",
     message: ""
   });
   const [status, setStatus] = useState<string | null>(null);
@@ -22,12 +24,18 @@ export default function InquiryForm() {
     setLoading(true);
     setStatus(null);
 
+    const enrichedMessage = [
+      `Exam target: ${form.examTarget}`,
+      `Current class: ${form.classLevel}`,
+      `Query: ${form.message}`
+    ].join("\n");
+
     const { error } = await supabase.from("inquiries").insert([
       {
         name: form.name,
         phone: form.phone,
         email: form.email,
-        message: form.message
+        message: enrichedMessage
       }
     ]);
 
@@ -35,7 +43,14 @@ export default function InquiryForm() {
       setStatus(error.message);
     } else {
       setStatus("Thanks! We will reach out within 24 hours.");
-      setForm({ name: "", phone: "", email: "", message: "" });
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        examTarget: "",
+        classLevel: "",
+        message: ""
+      });
     }
 
     setLoading(false);
@@ -73,6 +88,44 @@ export default function InquiryForm() {
             }
             required
           />
+        </div>
+        <div className="row">
+          <label htmlFor="examTarget">Target exam</label>
+          <select
+            id="examTarget"
+            value={form.examTarget}
+            onChange={(event) =>
+              setForm((prev) => ({ ...prev, examTarget: event.target.value }))
+            }
+            required
+          >
+            <option value="">Select exam</option>
+            <option value="JEE Main + Advanced">JEE Main + Advanced</option>
+            <option value="NEET">NEET</option>
+            <option value="SSC">SSC</option>
+            <option value="Banking">Banking</option>
+            <option value="Railways">Railways</option>
+            <option value="State Exams">State Exams</option>
+          </select>
+        </div>
+        <div className="row">
+          <label htmlFor="classLevel">Current class</label>
+          <select
+            id="classLevel"
+            value={form.classLevel}
+            onChange={(event) =>
+              setForm((prev) => ({ ...prev, classLevel: event.target.value }))
+            }
+            required
+          >
+            <option value="">Select class</option>
+            <option value="Class 9">Class 9</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Class 11">Class 11</option>
+            <option value="Class 12">Class 12</option>
+            <option value="Dropper">Dropper</option>
+            <option value="Graduate">Graduate</option>
+          </select>
         </div>
         <div className="row">
           <label htmlFor="email">Email</label>

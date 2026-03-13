@@ -911,6 +911,36 @@ body {
   transform: translateY(-2px);
 }
 
+.floating-actions {
+  position: fixed;
+  right: 20px;
+  bottom: 18px;
+  z-index: 80;
+  display: grid;
+  gap: 10px;
+}
+
+.floating-actions .sticky-cta {
+  position: static;
+}
+
+.whatsapp-cta {
+  text-decoration: none;
+  text-align: center;
+  background: linear-gradient(135deg, #0f8e58 0%, #24c274 100%);
+  color: #f6fffb;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 14px 30px rgba(11, 83, 53, 0.38);
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.whatsapp-cta:hover {
+  transform: translateY(-2px);
+}
+
 @media (min-width: 1024px) {
   .hero-banner-panel {
     justify-self: end;
@@ -921,6 +951,11 @@ body {
   }
 
   .sticky-cta {
+    right: 24px;
+    bottom: 22px;
+  }
+
+  .floating-actions {
     right: 24px;
     bottom: 22px;
   }
@@ -939,6 +974,67 @@ body {
   border-radius: 26px;
   border: 1px solid rgba(17, 197, 182, 0.2);
   box-shadow: 0 24px 60px rgba(11, 16, 32, 0.12);
+}
+
+.lead-magnet {
+  background: linear-gradient(150deg, rgba(245, 250, 255, 0.95), rgba(255, 244, 232, 0.9));
+  border: 1px solid rgba(11, 16, 32, 0.08);
+  border-radius: 24px;
+  padding: 30px;
+}
+
+.magnet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.magnet-card {
+  background: #ffffff;
+  border: 1px solid rgba(11, 16, 32, 0.1);
+  border-radius: 18px;
+  padding: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.magnet-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+}
+
+.magnet-card p {
+  color: var(--muted);
+}
+
+.faq-section {
+  border: 1px solid rgba(11, 16, 32, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(11, 16, 32, 0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq-item p {
+  color: var(--muted);
+  margin-top: 10px;
 }
 
 .grid {
@@ -2461,6 +2557,12 @@ body {
     border-radius: 18px;
   }
 
+  .lead-magnet,
+  .faq-section {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
   .trust-list {
     gap: 8px;
   }
@@ -2490,12 +2592,18 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .sticky-cta {
+  .floating-actions {
     right: 12px;
     left: 12px;
     bottom: 12px;
+    gap: 8px;
+  }
+
+  .sticky-cta,
+  .whatsapp-cta {
     text-align: center;
     padding: 11px 12px;
+    font-size: 0.84rem;
   }
 }
 
